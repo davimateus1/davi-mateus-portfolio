@@ -12,12 +12,12 @@ const Home = () => {
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Desenvolvedor de Software</span>
+            <span className="text-xl">Engenheiro de Software</span>
             <h1 className="h1 mb-6 max-w-xl">
               Olá, eu sou <span className="text-accent">Davi Mateus</span>
             </h1>
             <p className="max-w-[600px] mb-9 text-white/80">
-              Sou desenvolvedor de software com paixão por tecnologia e
+              Sou desenvolvedor com paixão por tecnologia e
               inovação, especializado em web e mobile. Bacharel em Ciência da
               Computação (UNICAP) e pós-graduando em Engenharia de Software
               (USP/Esalq).

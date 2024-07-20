@@ -32,7 +32,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const about = {
   title: "Sobre mim",
   description:
-    "Desenvolvedor web com experiência em desenvolvimento de sites, sistemas web e aplicativos. Trabalho com tecnologias como React, React Native, Next.js, Node.js, TypeScript, entre outras. Sou especialista em desenvolvimento web front-end e back-end. Atualmente, estou focado em desenvolver aplicações web e mobile com as melhores práticas de programação.",
+    "Desenvolvedor com experiência em desenvolvimento de sites, sistemas web e aplicativos. Trabalho com tecnologias como React, React Native, Next.js, Node.js, TypeScript, entre outras. Sou especialista em desenvolvimento web front-end e back-end. Atualmente, estou focado em desenvolver aplicações web e mobile com as melhores práticas de programação.",
   infos: [
     {
       fieldName: "Nome",
@@ -40,7 +40,7 @@ const about = {
     },
     {
       fieldName: "Telefone",
-      fieldValue: "+55 (87) 9 8847-6864",
+      fieldValue: "+55 (87) 98847-6864",
     },
     {
       fieldName: "Experiência",
