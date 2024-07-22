@@ -10,7 +10,7 @@ export const NotFoundSection = () => {
         opacity: 1,
         transition: { duration: 0.4, delay: 2.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center gap-[20px]"
+      className="min-h-[80vh] flex flex-col justify-center gap-[20px] px-[20px]"
     >
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
@@ -19,7 +19,7 @@ export const NotFoundSection = () => {
           y: 0,
           transition: { duration: 0.4, delay: 2.4, ease: "easeIn" },
         }}
-        className="text-5xl font-bold text-center text-accent"
+        className="text-3xl xl:text-5xl font-bold text-center text-accent"
       >
         404: Página não encontrada
       </motion.h1>
@@ -30,7 +30,7 @@ export const NotFoundSection = () => {
           y: 0,
           transition: { duration: 0.4, delay: 2.4, ease: "easeIn" },
         }}
-        className="text-center text-xl"
+        className="text-center text-lg xl:text-xl"
       >
         Oops! Parece que você se perdeu. A página que você está procurando não
         existe.
