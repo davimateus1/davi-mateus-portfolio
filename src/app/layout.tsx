@@ -35,30 +35,30 @@ export default function RootLayout({
   const siteUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <meta name="description" content={description} />
         <meta property="og:url" content={siteUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Davi Mateus Portfólio" />
         <meta property="og:description" content={description} />
-        {/* <meta
+        <meta
           property="og:image"
-          content={`${siteUrl}/opengraph-image.png?df62d10af596ed36`}
-        /> */}
+          content="https://davimateusga.vercel.app/opengraph-image.jpg?e6d550a05c59c95e"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content={siteUrl} />
         <meta property="twitter:url" content={siteUrl} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:title" content="Davi Mateus Portfólio" />
-        {/* <meta
+        <meta
           name="twitter:image"
-          content={`${siteUrl}/opengraph-image.png?df62d10af596ed36`}
-        /> */}
-        {/* <meta
+          content="https://davimateusga.vercel.app/opengraph-image.jpg?e6d550a05c59c95e"
+        />
+        <meta
           name="google-site-verification"
-          content=""
-        /> */}
+          content="5Mb6C4D9Ndv52VmyGpw3DHnHegG1EEGJxYb9aBiBLjU"
+        />
         <meta
           name="keywords"
           content="Davi Mateus, desenvolvedor de software, fullstack, desenvolvimento mobile, desenvolvedor fullstack, desenvolvedor mobile, engenharia de software, desenvolvimento web, aplicativos móveis, desenvolvimento de aplicativos, programação, UNICAP, USP, Esalq, projetos de software, soluções de software, tecnologia, inovação, React, Node.js, JavaScript, TypeScript, Python, desenvolvimento de sistemas, backend, frontend, UI/UX design, banco de dados, APIs, RESTful, desenvolvimento ágil, Git, GitHub, CI/CD, teste de software, deploy, cloud computing, AWS, Firebase, desenvolvimento de websites, portfólio de desenvolvedor"

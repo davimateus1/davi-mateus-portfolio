@@ -81,4 +81,18 @@
   .text-outline-hover {
     -webkit-text-stroke: 1px #00ff99;
   }
+
+  ::-webkit-scrollbar {
+    width: 7.5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: #00ff99;
+    border: 3px solid #00ff99;
+  }
 }
