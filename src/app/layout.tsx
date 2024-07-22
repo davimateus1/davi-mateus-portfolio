@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 
 import { Header } from "@/components/header";
+import { Toaster } from "@/components/ui/toaster";
 import { PageTransition } from "@/components/page-transition";
 import { StairTransition } from "@/components/stair-transition";
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
+        <Toaster />
       </body>
     </html>
   );

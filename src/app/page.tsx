@@ -1,3 +1,5 @@
+"use client";
+
 import { DownloadIcon } from "lucide-react";
 
 import { Photo } from "@/components/photo";
@@ -5,8 +7,27 @@ import { Stats } from "@/components/stats";
 
 import { Socials } from "@/components/socials";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 
 const Home = () => {
+  const { toast } = useToast();
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/assets/cv/davi-mateus.pdf";
+    link.download = "CV_Davi_Mateus.pdf";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    return toast({
+      variant: "success",
+      title: "Download iniciado",
+      description: "O currículo está sendo baixado.",
+    });
+  };
+
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
@@ -17,15 +38,15 @@ const Home = () => {
               Olá, eu sou <span className="text-accent">Davi Mateus</span>
             </h1>
             <p className="max-w-[600px] mb-9 text-white/80">
-              Sou desenvolvedor com paixão por tecnologia e
-              inovação, especializado em web e mobile. Bacharel em Ciência da
-              Computação (UNICAP) e pós-graduando em Engenharia de Software
-              (USP/Esalq).
+              Sou desenvolvedor com paixão por tecnologia e inovação,
+              especializado em web e mobile. Bacharel em Ciência da Computação
+              (UNICAP) e pós-graduando em Engenharia de Software (USP/Esalq).
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button
-                variant="outline"
                 size="lg"
+                variant="outline"
+                onClick={handleDownload}
                 className="uppercase flex items-center gap-2"
               >
                 <span>Download CV</span>

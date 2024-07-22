@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import { Nav } from "./nav";
-import { Button } from "./ui/button";
-import { MobileNav } from "./mobile-nav";
+import { Nav } from "@/components/nav";
+import { Button } from "@/components/ui/button";
+import { MobileNav } from "@/components/mobile-nav";
 
 export const Header = () => {
   return (
@@ -17,7 +17,7 @@ export const Header = () => {
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
           <Link href="/contact">
-            <Button>Hire Me</Button>
+            <Button>Encontre-me</Button>
           </Link>
         </div>
 

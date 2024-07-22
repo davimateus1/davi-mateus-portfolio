@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { BsArrowDownRight } from "react-icons/bs";
 
 const services = [
@@ -32,6 +32,24 @@ const services = [
 ];
 
 const Services = () => {
+  const whatsappLink =
+    "https://api.whatsapp.com/send?l=pt-BR&phone=5587988476864&text=";
+
+  const handleWhatsApp = (service: string) => {
+    switch (service) {
+      case "Desenvolvimento Web":
+        return `${whatsappLink}Olá, gostaria de saber mais sobre o serviço de Desenvolvimento Web.`;
+      case "Desenvolvimento Mobile":
+        return `${whatsappLink}Olá, gostaria de saber mais sobre o serviço de Desenvolvimento Mobile.`;
+      case "SEO":
+        return `${whatsappLink}Olá, gostaria de saber mais sobre o serviço de SEO.`;
+      case "Hospedagem":
+        return `${whatsappLink}Olá, gostaria de saber mais sobre o serviço de Hospedagem.`;
+      default:
+        return `${whatsappLink}Olá, gostaria de saber mais sobre os serviços.`;
+    }
+  };
+
   return (
     <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
       <div className="container mx-auto">
@@ -52,16 +70,16 @@ const Services = () => {
                 <h1 className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
                   {String(index).padStart(2, "0")}
                 </h1>
-                <Link
-                  href={`/teste`}
+                <Button
+                  onClick={() => window.open(handleWhatsApp(title), "_blank")}
                   className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
                 >
                   <BsArrowDownRight className="text-primary text-3xl" />
-                </Link>
+                </Button>
               </div>
-              <h2
-                className="text-[30px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500"
-              >{title}</h2>
+              <h2 className="text-[30px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                {title}
+              </h2>
               <p className="text-white/60">{description}</p>
               <div className="border-b border-white/20 w-full" />
             </div>

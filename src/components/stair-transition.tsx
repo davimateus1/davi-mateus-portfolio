@@ -1,7 +1,6 @@
 "use client";
 
-import { Stairs } from "./stairs";
-
+import { Stairs } from "@/components/stairs";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 

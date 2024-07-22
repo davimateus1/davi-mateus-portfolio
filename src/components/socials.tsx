@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const socials = [
-  { icon: <FaGithub />, path: "" },
-  { icon: <FaLinkedin />, path: "" },
-  { icon: <FaInstagram />, path: "" },
+  { icon: <FaGithub />, path: "https://github.com/davimateus1" },
+  { icon: <FaLinkedin />, path: "https://www.linkedin.com/in/davimateusg" },
+  { icon: <FaInstagram />, path: "https://www.instagram.com/davimateus1" },
 ];
 
 interface SocialsProps {
@@ -16,7 +16,7 @@ export const Socials = ({ containerStyles, iconStyles }: SocialsProps) => {
   return (
     <div className={containerStyles}>
       {socials.map(({ icon, path }, index) => (
-        <Link key={index} href={path} className={iconStyles}>
+        <Link key={index} href={path} target="_blank" className={iconStyles}>
           {icon}
         </Link>
       ))}

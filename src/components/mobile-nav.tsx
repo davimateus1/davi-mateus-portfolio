@@ -1,31 +1,17 @@
 "use client";
 
-import { Logs } from "lucide-react";
-import { usePathname } from "next/navigation";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import Link from "next/link";
+import { Logs } from "lucide-react";
+
+import { usePathname } from "next/navigation";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const links = [
-  {
-    name: "home",
-    path: "/",
-  },
-  {
-    name: "serviços",
-    path: "/services",
-  },
-  {
-    name: "sobre",
-    path: "/resume",
-  },
-  {
-    name: "projetos",
-    path: "/work",
-  },
-  {
-    name: "contato",
-    path: "/contact",
-  },
+  { name: "home", path: "/" },
+  { name: "serviços", path: "/services" },
+  { name: "sobre", path: "/resume" },
+  { name: "projetos", path: "/work" },
+  { name: "contato", path: "/contact" },
 ];
 
 export const MobileNav = () => {
