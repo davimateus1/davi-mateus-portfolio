@@ -19,7 +19,7 @@ export const BlogSection = () => {
     >
       <div className="container mx-auto">
         <div className="text-center xl:text-left">
-          <h1 className="text-4xl mb-6 max-w-xl text-accent">Blog</h1>
+          <h1 className="text-5xl mb-6 max-w-xl text-accent">Blog</h1>
           <p className="max-w-[800px] mb-9 text-white/60">
             Alguns dos meus pensamentos e aprendizados sobre tecnologia, novas
             ferramentas e metodologias de trabalho. Acompanhe o blog para ficar

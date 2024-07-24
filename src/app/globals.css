@@ -82,6 +82,32 @@
     -webkit-text-stroke: 1px #00ff99;
   }
 
+  .items-article {
+    img {
+      @apply mx-auto mt-4;
+    }
+
+    figcaption {
+      @apply text-center mb-4;
+    }
+
+    pre {
+      @apply bg-gray-800 text-white p-4 rounded-lg overflow-x-auto my-2;
+    }
+
+    ul {
+      @apply list-disc list-inside;
+    }
+
+    li {
+      @apply my-2;
+    }
+    
+    a {
+      @apply text-accent
+    }
+  }
+
   ::-webkit-scrollbar {
     width: 7.5px;
   }

@@ -6,6 +6,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Link from "next/link";
 
 interface ArticleCardProps extends FeedItem {
   authorImage: string;
@@ -13,6 +14,7 @@ interface ArticleCardProps extends FeedItem {
 
 export const ArticleCard = ({
   link,
+  guid,
   title,
   author,
   pubDate,
@@ -21,6 +23,7 @@ export const ArticleCard = ({
   authorImage,
 }: ArticleCardProps) => {
   const $ = cheerio.load(description);
+  const id = guid.split("/").pop();
 
   const descriptionText = $.text()
     .replace(/\s{2,}/g, " ")
@@ -51,30 +54,34 @@ export const ArticleCard = ({
           <p className="text-white/80 text-sm">{formattedDate}</p>
         </div>
       </div>
-      <h1 className="text-accent font-bold group-hover:text-white transition-all duration-500">
+      <h1 className="text-accent font-bold group-hover:text-white transition-all duration-500 text-center xl:text-start">
         {title}
       </h1>
-      <p className="text-white/60 line-clamp-3">{descriptionText}</p>
+      <p className="text-white/60 line-clamp-3 text-center xl:text-start">
+        {descriptionText}
+      </p>
       <div className="flex flex-wrap group gap-[15px] justify-center xl:justify-start">
         {categories.map((category) => (
           <span
             key={category}
-            className="text-primary/80 bg-accent text-xs py-2 px-3 font-bold rounded-full capitalize hover:bg-primary hover:text-accent transition-all duration-500"
+            className="text-primary/80 bg-accent text-xs p-2 font-bold rounded-full capitalize hover:bg-primary hover:text-accent transition-all duration-500"
           >
             {category}
           </span>
         ))}
       </div>
-      <div className="flex justify-center xl:justify-end p-2 gap-x-4">
+      <div className="flex justify-end p-2 gap-x-4">
         <Button
-          className="w-14 h-14 p-0 hover:bg-primary hover:text-accent"
+          className="w-12 h-12 p-0 hover:bg-primary hover:text-accent"
           onClick={handleGoToMedium}
         >
           <SiMedium className="text-3xl" />
         </Button>
-        <Button className="w-14 h-14 p-0 hover:bg-primary hover:text-accent">
-          <MdKeyboardDoubleArrowRight className="text-3xl" />
-        </Button>
+        <Link href={`/blog/${id}`}>
+          <Button className="w-12 h-12 p-0 hover:bg-primary hover:text-accent">
+            <MdKeyboardDoubleArrowRight className="text-3xl" />
+          </Button>
+        </Link>
       </div>
     </div>
   );
