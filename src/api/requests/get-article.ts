@@ -6,7 +6,9 @@ export const getArticle = async (articleId: string): Promise<FeedItem> => {
     params: { rss_url: "https://medium.com/feed/@davimateusg" },
   });
 
-  return response.data.items.find(
+  const data = response.data.items.find(
     (article: FeedItem) => article.guid.split("/").pop() === articleId
   );
+
+  return { ...data, authorImage: response.data.feed.image };
 };

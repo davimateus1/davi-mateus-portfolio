@@ -54,7 +54,7 @@ export const ArticleCard = ({
           <p className="text-white/80 text-sm">{formattedDate}</p>
         </div>
       </div>
-      <h1 className="text-accent font-bold group-hover:text-white transition-all duration-500 text-center xl:text-start">
+      <h1 className="text-accent font-bold group-hover:text-white transition-all duration-500 text-center xl:text-start line-clamp-2">
         {title}
       </h1>
       <p className="text-white/60 line-clamp-3 text-center xl:text-start">

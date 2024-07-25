@@ -18,6 +18,7 @@ export interface FeedItem {
   content: string;
   enclosure: Record<string, unknown>;
   categories: string[];
+  authorImage?: string;
 }
 
 export interface MediumFeed {
