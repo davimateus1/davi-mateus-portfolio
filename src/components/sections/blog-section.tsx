@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FaSpinner } from "react-icons/fa";
+
 import { ArticleCard } from "@/components/article-card";
 import { useGetArticles } from "@/api/hooks/use-get-articles";
 
@@ -29,7 +30,7 @@ export const BlogSection = () => {
 
         {isLoading && (
           <div className="flex justify-center">
-            <FaSpinner className="animate-spin text-4xl" />
+            <FaSpinner className="animate-spin text-5xl text-accent" />
           </div>
         )}
 
