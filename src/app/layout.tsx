@@ -6,6 +6,7 @@ import { JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
 
+import { QueryProvider } from "@/providers/query-provider";
 import { PageTransition } from "@/components/page-transition";
 import { StairTransition } from "@/components/stair-transition";
 
@@ -65,10 +66,12 @@ export default function RootLayout({
         />
       </head>
       <body className={jetbrainsMono.variable}>
-        <Header />
-        <StairTransition />
-        <PageTransition>{children}</PageTransition>
-        <Toaster />
+        <QueryProvider>
+          <Header />
+          <StairTransition />
+          <PageTransition>{children}</PageTransition>
+          <Toaster />
+        </QueryProvider>
       </body>
     </html>
   );

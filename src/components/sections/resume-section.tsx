@@ -260,7 +260,7 @@ export const ResumeSection = () => {
                     {experience.items.map(({ company, duration, position }) => (
                       <li
                         key={company}
-                        className="bg-[#232329] minh-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        className="bg-[#232329] min-h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                       >
                         <span className="text-accent">{duration}</span>
                         <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
