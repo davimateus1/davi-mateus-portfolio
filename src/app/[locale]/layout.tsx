@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 
+import { notFound } from "next/navigation";
 import { Header } from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -28,12 +29,20 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? ""),
 };
 
+const locales = ["en", "pt"];
+
 export default function RootLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
   const siteUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+  if (!locales.includes(locale)) {
+    return notFound();
+  }
 
   return (
     <html lang="pt-BR">
