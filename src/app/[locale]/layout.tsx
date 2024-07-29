@@ -10,6 +10,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { QueryProvider } from "@/providers/query-provider";
 import { PageTransition } from "@/components/page-transition";
 import { StairTransition } from "@/components/stair-transition";
+import { NextIntlClientProvider } from "next-intl";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -45,7 +46,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="pt-BR">
+    <html lang={locale}>
       <head>
         <meta name="description" content={description} />
         <meta property="og:url" content={siteUrl} />
@@ -75,12 +76,14 @@ export default function RootLayout({
         />
       </head>
       <body className={jetbrainsMono.variable}>
-        <QueryProvider>
-          <Header />
-          <StairTransition />
-          <PageTransition>{children}</PageTransition>
-          <Toaster />
-        </QueryProvider>
+        <NextIntlClientProvider>
+          <QueryProvider>
+            <Header />
+            <StairTransition />
+            <PageTransition>{children}</PageTransition>
+            <Toaster />
+          </QueryProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -8,8 +8,11 @@ import { Socials } from "@/components/socials";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 
+import { useTranslations } from "next-intl";
+
 export const HomeSection = () => {
   const { toast } = useToast();
+  const t = useTranslations("Home");
 
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -32,14 +35,12 @@ export const HomeSection = () => {
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Engenheiro de Software</span>
+            <span className="text-xl">{t("work")}</span>
             <h1 className="h1 mb-6 max-w-xl">
-              Olá, eu sou <span className="text-accent">Davi Mateus</span>
+              {t("title")} <span className="text-accent">Davi Mateus</span>
             </h1>
             <p className="max-w-[600px] mb-9 text-white/80">
-              Sou desenvolvedor com paixão por tecnologia e inovação,
-              especializado em web e mobile. Bacharel em Ciência da Computação
-              (UNICAP) e pós-graduando em Engenharia de Software (USP/Esalq).
+              {t("description")}
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button
@@ -48,7 +49,7 @@ export const HomeSection = () => {
                 onClick={handleDownload}
                 className="uppercase flex items-center gap-2"
               >
-                <span>Download CV</span>
+                <span>{t("download")}</span>
                 <DownloadIcon className="w-6 h-6" />
               </Button>
               <div className="mb-8 xl:mb-0">
