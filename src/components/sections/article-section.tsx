@@ -4,12 +4,14 @@ import * as cheerio from "cheerio";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-import { FaSpinner } from "react-icons/fa";
 import { Socials } from "@/components/socials";
 import { Button } from "@/components/ui/button";
+import { FaReadme, FaSpinner } from "react-icons/fa";
 
+import { readingTime } from "@/utils/reading-time";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 import { useGetArticle } from "@/api/hooks/use-get-article";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const ArticleSection = () => {
@@ -45,19 +47,25 @@ const ArticleSection = () => {
 
       {error && (
         <p className="w-full text-center  text-red-500 xl:text-xl">
-          Erro ao carregar o artigo, tente novamente.
+          Ocorreu um erro ao carregar o artigo, tente novamente mais tarde :(
         </p>
       )}
 
       {!data && (
         <p className="w-full text-center text-white/80 xl:text-xl px-4 xl:px-0">
-          Este artigo não existe ou foi removido.
+          Este artigo não existe ou foi removido :(
         </p>
       )}
 
       {data && (
         <>
           <div className="container mx-auto gap-[30px]">
+            <div className="flex items-center gap-x-2 mb-4 justify-center">
+              <FaReadme className="text-2xl text-accent" />
+              <p className="text-white/60 text-center xl:text-start text-md">
+                {readingTime(data?.description)} min
+              </p>
+            </div>
             <h1 className="text-4xl mb-6 w-full text-center text-accent">
               {data?.title}
             </h1>

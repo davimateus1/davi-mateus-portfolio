@@ -1,12 +1,14 @@
+import Link from "next/link";
 import * as cheerio from "cheerio";
 import { FeedItem } from "@/api/interfaces";
 
+import { FaReadme } from "react-icons/fa";
 import { SiMedium } from "react-icons/si";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-
 import { Button } from "@/components/ui/button";
+
+import { readingTime } from "@/utils/reading-time";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import Link from "next/link";
 
 interface ArticleCardProps extends FeedItem {
   authorImage: string;
@@ -41,18 +43,28 @@ export const ArticleCard = ({
 
   return (
     <div className="w-full max-w-[600px] bg-[#232329] rounded-xl flex flex-col p-6 gap-[10px] group cursor-default">
-      <div className="flex items-center flex-col xl:flex-row gap-5 xl:gap-x-2">
-        <Avatar className="w-16 h-16 xl:w-12 xl:h-12">
-          <AvatarImage src={authorImage} />
-          <AvatarFallback className="bg-accent text-primary">
-            {author[0]}
-          </AvatarFallback>
-        </Avatar>
-        <div className="flex items-center gap-x-2">
-          <p className="text-white/80 text-bold text-sm">{author}</p>
-          <div className="w-1 h-1 bg-white/80 rounded-full" />
-          <p className="text-white/80 text-sm">{formattedDate}</p>
+      <div className="flex items-center justify-center xl:justify-between flex-col xl:flex-row">
+        <div className="flex gap-5 xl:gap-x-2 flex-col xl:flex-row items-center">
+          <Avatar className="w-16 h-16 xl:w-12 xl:h-12">
+            <AvatarImage src={authorImage} />
+            <AvatarFallback className="bg-accent text-primary">
+              {author[0]}
+            </AvatarFallback>
+          </Avatar>
+          <div className="flex items-center gap-x-2">
+            <p className="text-white/80 text-bold text-sm">{author}</p>
+            <div className="w-1 h-1 bg-white/80 rounded-full" />
+            <p className="text-white/80 text-sm">{formattedDate}</p>
+          </div>
         </div>
+        {readingTime(description) > 0 && (
+          <div className="flex items-center gap-x-2">
+            <FaReadme className="text-xl text-accent" />
+            <p className="text-white/60 text-center xl:text-start text-sm">
+              {readingTime(description)} min
+            </p>
+          </div>
+        )}
       </div>
       <h1 className="text-accent font-bold group-hover:text-white transition-all duration-500 text-center xl:text-start line-clamp-2">
         {title}
@@ -70,7 +82,7 @@ export const ArticleCard = ({
           </span>
         ))}
       </div>
-      <div className="flex justify-end p-2 gap-x-4">
+      <div className="flex justify-center xl:justify-end p-2 gap-x-4">
         <Button
           className="w-12 h-12 p-0 hover:bg-primary hover:text-accent"
           onClick={handleGoToMedium}

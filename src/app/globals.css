@@ -114,6 +114,10 @@
     blockquote {
       @apply border-l-4 border-accent p-4 my-4 italic;
     }
+
+    strong {
+      @apply text-accent italic;
+    }
   }
 
   ::-webkit-scrollbar {

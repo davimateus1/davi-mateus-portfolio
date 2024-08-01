@@ -227,6 +227,10 @@ const skills = {
 };
 
 export const ResumeSection = () => {
+  const sortedSkills = skills.skillList.sort(
+    (a, b) => b.percentage - a.percentage
+  );
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -317,7 +321,7 @@ export const ResumeSection = () => {
                 </div>
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4">
-                    {skills.skillList.map(({ icon, title, percentage }) => (
+                    {sortedSkills.map(({ icon, title, percentage }) => (
                       <li key={title} className="flex items-center gap-3">
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
