@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import {
   SiCsharp,
   SiOracle,
+  SiDocker,
   SiPrisma,
   SiShadcnui,
   SiChakraui,
@@ -12,56 +15,40 @@ import {
   SiVuedotjs,
   SiNextdotjs,
   SiPostgresql,
+  SiTypescript,
   SiTailwindcss,
   SiSocketdotio,
   SiStyledcomponents,
-  SiDocker,
 } from "react-icons/si";
 
 import {
   Tooltip,
+  TooltipTrigger,
   TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { FaCss3, FaHtml5, FaJs, FaNodeJs, FaReact } from "react-icons/fa";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  FaJs,
+  FaCss3,
+  FaJava,
+  FaHtml5,
+  FaReact,
+  FaNodeJs,
+} from "react-icons/fa";
 
 const about = {
   title: "Sobre mim",
   description:
     "Desenvolvedor com experiência em desenvolvimento de sites, sistemas web e aplicativos. Trabalho com tecnologias como React, React Native, Next.js, Node.js, TypeScript, entre outras. Sou especialista em desenvolvimento web front-end e back-end. Atualmente, estou focado em desenvolver aplicações web e mobile com as melhores práticas de programação.",
   infos: [
-    {
-      fieldName: "Nome",
-      fieldValue: "Davi Mateus",
-    },
-    {
-      fieldName: "Telefone",
-      fieldValue: "+55 (87) 98847-6864",
-    },
-    {
-      fieldName: "Experiência",
-      fieldValue: "4 anos",
-    },
-    {
-      fieldName: "E-mail",
-      fieldValue: "davimateusga@gmail.com",
-    },
-    {
-      fieldName: "Nacionalidade",
-      fieldValue: "Brasileiro",
-    },
-    {
-      fieldName: "Freelancer",
-      fieldValue: "Disponível",
-    },
-    {
-      fieldName: "Idiomas",
-      fieldValue: "Português, Inglês (intermediário)",
-    },
+    { fieldName: "Nome", fieldValue: "Davi Mateus" },
+    { fieldName: "Telefone", fieldValue: "+55 (87) 98847-6864" },
+    { fieldName: "Experiência", fieldValue: "4 anos" },
+    { fieldName: "E-mail", fieldValue: "davimateusga@gmail.com" },
+    { fieldName: "Nacionalidade", fieldValue: "Brasileiro" },
+    { fieldName: "Freelancer", fieldValue: "Disponível" },
+    { fieldName: "Idiomas", fieldValue: "Português, Inglês (intermediário)" },
   ],
 };
 
@@ -221,6 +208,16 @@ const skills = {
     {
       icon: <SiDocker />,
       title: "Docker",
+      percentage: 40,
+    },
+    {
+      icon: <SiTypescript />,
+      title: "TypeScript",
+      percentage: 80,
+    },
+    {
+      icon: <FaJava />,
+      title: "Java",
       percentage: 40,
     },
   ],
